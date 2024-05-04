@@ -16,7 +16,7 @@ class AppBarDetails extends StatelessWidget {
           height: 8,
         ),
         Icon(
-          Icons.menu_open_outlined,
+          Icons.menu_outlined,
           color: Colors.black,
           size: 24,
         ),
@@ -29,16 +29,16 @@ class AppBarDetails extends StatelessWidget {
             Row(
               children: [
                 Icon(
-                  Icons.event_outlined,
+                  Icons.sports_soccer_outlined,
                   color: Colors.black,
-                  size: 28,
+                  size: 30,
                 ),
                 SizedBox(
                   width: 8.0,
                 ),
                 Text("Soccer Events",
                     style: googleLatoFontProvider(
-                        fontSize: 21, fontWeight: FontWeight.w900)),
+                        fontSize: 20, fontWeight: FontWeight.w700)),
               ],
             ),
             TextButton(
@@ -89,14 +89,14 @@ class AppBarDetails extends StatelessWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Icon(Icons.search_outlined),
+                  Icon(Icons.search_outlined,color: Colors.black54,),
                   SizedBox(
                     width: 8.0,
                   ),
                   Text(
                     "Search Events",
                     style: googleLatoFontProvider(
-                        fontSize: 13, fontWeight: FontWeight.w600),
+                        fontSize: 13, fontWeight: FontWeight.w600,color: Colors.black54),
                   ),
                 ],
               ),

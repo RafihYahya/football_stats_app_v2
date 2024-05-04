@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:football_stats_tracker/LAYOUT/VIEWS/Home/Widgets/home_matches_card.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -10,13 +11,7 @@ class HomeView extends StatelessWidget {
       child: ListView.builder(
           itemCount: 15,
           itemBuilder: (context, index) {
-            return Container(
-              margin: EdgeInsets.symmetric(vertical: 8.0),
-              height: 170,
-              decoration: BoxDecoration(
-                  color: Color(0xFF253546),
-                  borderRadius: BorderRadius.circular(12.0)),
-            );
+            return HomeMatchCard();
           }),
     );
   }

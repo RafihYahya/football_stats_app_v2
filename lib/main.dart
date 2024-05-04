@@ -16,8 +16,18 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           useMaterial3: true,
-          colorScheme: ColorScheme.fromSeed(
-              seedColor: AppColors.primaryBackgroundColor)),
+          colorScheme: const ColorScheme(
+              brightness: Brightness.dark,
+              primary: AppColors.primaryColor,
+              onPrimary: AppColors.onPrimaryColor,
+              secondary: AppColors.secondaryColor,
+              onSecondary: AppColors.onSecondaryColor,
+              error: AppColors.errorColor,
+              onError: AppColors.onErrorColor,
+              background: AppColors.primaryBackgroundColor,
+              onBackground: AppColors.onBackgroundColor,
+              surface: AppColors.surfaceColor,
+              onSurface: AppColors.onSurfaceColor)),
     );
   }
 }

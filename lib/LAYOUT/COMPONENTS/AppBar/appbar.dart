@@ -17,7 +17,7 @@ class MyAppBar extends StatefulWidget {
 }
 
 class _MyAppBarState extends State<MyAppBar> {
-  var height = 265.0;
+  var height = 255.0;
 
   @override
   Widget build(BuildContext context) {

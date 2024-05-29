@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeMatchCard extends StatelessWidget {
   const HomeMatchCard({super.key});
@@ -22,12 +23,12 @@ class HomeMatchCard extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.only(bottom: 12.0),
                   decoration: BoxDecoration(
-                      color: Colors.black,
+                      image: DecorationImage(image:Image.asset('assets/images/testars.png',).image),
                       borderRadius: BorderRadius.circular(12.0)),
                   width: 75,
                   height: 75,
-                ),
-                Text("FC Barcelona")
+              ),
+                Text("Arsenal",style: GoogleFonts.poppins(textStyle:TextStyle(color: Colors.white)),)
               ],
             ),
             Column(
@@ -36,12 +37,12 @@ class HomeMatchCard extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.only(bottom: 12.0),
                   decoration: BoxDecoration(
-                      color: Colors.black,
+                      image: DecorationImage(image:Image.asset('assets/images/testche.png',).image),
                       borderRadius: BorderRadius.circular(12.0)),
                   width: 75,
                   height: 75,
                 ),
-                Text("Arsenal")
+                Text("Chelsia",style: GoogleFonts.poppins(textStyle:TextStyle(color: Colors.white)),)
               ],
             ),
           ],

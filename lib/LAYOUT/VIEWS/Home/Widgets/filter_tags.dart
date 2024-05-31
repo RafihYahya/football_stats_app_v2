@@ -6,18 +6,20 @@ class HomeTagsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const List<String> tags = ["Today", "Tommorow", "Yesterday"];
+    const List<String> tags = ["ALL", "LIVE", "UPCOMING", "FINISHED"];
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         for (var i = 0; i < tags.length; i++)
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 2.0),
             child: Text(
               tags[i],
               style: GoogleFonts.poppins(
-                  textStyle:
-                      const TextStyle(fontSize: 14, color: Colors.white)),
+                  textStyle: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                      color: i == 0 ? Colors.green : Colors.white)),
             ),
           )
       ],

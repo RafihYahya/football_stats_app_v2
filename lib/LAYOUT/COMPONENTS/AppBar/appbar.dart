@@ -17,7 +17,7 @@ class MyAppBar extends StatefulWidget {
 }
 
 class _MyAppBarState extends State<MyAppBar> {
-  var height = 255.0;
+  var height = 250.0;
 
   @override
   Widget build(BuildContext context) {
@@ -25,14 +25,14 @@ class _MyAppBarState extends State<MyAppBar> {
       behavior: HitTestBehavior.opaque,
       onVerticalDragUpdate: (details) {
         setState(() {
-          height = (height + details.delta.dy) < 105
-              ? 105
+          height = (height + details.delta.dy) < 75
+              ? 75
               : height + details.delta.dy;
         });
       },
       onVerticalDragEnd: (details) {
         setState(() {
-          details.primaryVelocity! < 0 ? height = 105 : height = 280;
+          details.primaryVelocity! < 0 ? height = 75 : height = 280;
         });
       },
       onDoubleTap: () {
@@ -49,10 +49,11 @@ class _MyAppBarState extends State<MyAppBar> {
           padding: EdgeInsets.all(20.0),
           color: Color(0xFF009f3f),
           height: height,
-          child: SafeArea(child: AppBarDetails()),
+          child: Visibility(
+              visible: height < 250 ? false : true,
+              child: SafeArea(child: AppBarDetails())),
         ),
       ),
     );
   }
 }
-

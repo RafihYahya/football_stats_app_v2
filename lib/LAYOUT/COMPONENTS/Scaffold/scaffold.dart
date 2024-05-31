@@ -14,7 +14,7 @@ class MyCustomScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  var maxHeight = 255.00;
+  var maxHeight = 250.00;
     return Scaffold(
       bottomNavigationBar: navBar,
       appBar: appBar == null

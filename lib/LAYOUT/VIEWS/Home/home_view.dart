@@ -17,6 +17,7 @@ class HomeView extends StatelessWidget {
           ),
           Expanded(
             child: ListView.builder(
+              physics: PageScrollPhysics(),
                 itemCount: 15,
                 itemBuilder: (context, index) {
                   return HomeMatchCard();

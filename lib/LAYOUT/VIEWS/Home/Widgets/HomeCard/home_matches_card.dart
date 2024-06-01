@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:football_stats_tracker/LAYOUT/VIEWS/Home/Widgets/home_card_score.dart';
+import 'package:football_stats_tracker/LAYOUT/VIEWS/Home/Widgets/HomeCard/home_card_score.dart';
+import 'package:football_stats_tracker/LAYOUT/VIEWS/Home/Widgets/HomeCard/home_card_series_type.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomeMatchCard extends StatelessWidget {
@@ -16,19 +17,7 @@ class HomeMatchCard extends StatelessWidget {
       child: Stack(
         alignment: Alignment.topCenter,
         children: [
-          Container(
-            height: 30,
-            width: 135,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(8.0),
-                  bottomRight: Radius.circular(8.0)),
-              color: Colors.black,
-            ),
-            child: Center(
-              child: null,
-            ),
-          ),
+          HomeCardSeriesType(),
           Padding(
             padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 45.0),
             child: Row(
@@ -95,3 +84,5 @@ class HomeMatchCard extends StatelessWidget {
     );
   }
 }
+
+

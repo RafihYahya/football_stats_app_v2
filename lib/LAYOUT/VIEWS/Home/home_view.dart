@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:football_stats_tracker/LAYOUT/VIEWS/Home/Widgets/filter_tags.dart';
-import 'package:football_stats_tracker/LAYOUT/VIEWS/Home/Widgets/home_matches_card.dart';
+import 'package:football_stats_tracker/LAYOUT/VIEWS/Home/Widgets/HomeCard/home_matches_card.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});

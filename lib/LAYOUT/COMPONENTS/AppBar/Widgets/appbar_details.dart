@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:football_stats_tracker/CONSTANTS/theme.dart';
-import 'package:football_stats_tracker/UTILS/google_fonts_utils.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppBarDetails extends StatelessWidget {

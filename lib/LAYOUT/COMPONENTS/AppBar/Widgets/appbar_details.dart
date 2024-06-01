@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:football_stats_tracker/CONSTANTS/theme.dart';
 import 'package:football_stats_tracker/UTILS/google_fonts_utils.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppBarDetails extends StatelessWidget {
   const AppBarDetails({
@@ -10,101 +11,114 @@ class AppBarDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 24.0),
+      padding: const EdgeInsets.symmetric(vertical: 18.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-         
           Icon(
             Icons.menu_outlined,
-            color: Colors.black,
+            color: Colors.black87,
             size: 24,
           ),
-         
           Column(
             children: [
               Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Icon(
-                    Icons.sports_soccer_outlined,
-                    color: Colors.black,
-                    size: 30,
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.sports_soccer_outlined,
+                        color: Colors.black87,
+                        size: 32,
+                      ),
+                      SizedBox(
+                        width: 8.0,
+                      ),
+                      Text(
+                        "Soccer Events",
+                        style: GoogleFonts.poppins(
+                            textStyle: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black87)),
+                      )
+                    ],
                   ),
-                  SizedBox(
-                    width: 8.0,
-                  ),
-                  Text("Soccer Events",
-                      style: googleLatoFontProvider(
-                          fontSize: 20, fontWeight: FontWeight.w700)),
+                  TextButton(
+                    style: TextButton.styleFrom(
+                        minimumSize: Size(105, 45),
+                        padding: EdgeInsets.symmetric(horizontal: 16.0),
+                        foregroundColor: AppColors.onBackgroundColor,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0)),
+                        backgroundColor: Color(0xff33b256)),
+                    onPressed: () {},
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.calendar_today,
+                          size: 16,
+                        ),
+                        SizedBox(
+                          width: 8,
+                        ),
+                        Text(
+                          "Today",
+                          style: GoogleFonts.poppins(
+                              textStyle: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.black87)),
+                        )
+                      ],
+                    ),
+                  )
                 ],
+              ),
+              SizedBox(
+                height: 28.0,
               ),
               TextButton(
                 style: TextButton.styleFrom(
-                    minimumSize: Size(90, 35),
+                    alignment: Alignment.centerLeft,
+                    minimumSize: Size(MediaQuery.of(context).size.width, 55),
                     padding: EdgeInsets.symmetric(horizontal: 16.0),
                     foregroundColor: AppColors.onBackgroundColor,
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10.0)),
+                        borderRadius: BorderRadius.circular(8.0)),
                     backgroundColor: Color(0xff33b256)),
                 onPressed: () {},
                 child: Row(
-                  children: [
-                    Icon(
-                      Icons.calendar_today,
-                      size: 16,
-                    ),
-                    SizedBox(
-                      width: 8,
-                    ),
-                    Text(
-                      "Today",
-                      style: googleLatoFontProvider(
-                          fontSize: 12, fontWeight: FontWeight.w600),
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
-          SizedBox(
-            height: 30.0,
-          ),
-          TextButton(
-            style: TextButton.styleFrom(
-                alignment: Alignment.centerLeft,
-                minimumSize: Size(MediaQuery.of(context).size.width, 50),
-                padding: EdgeInsets.symmetric(horizontal: 16.0),
-                foregroundColor: AppColors.onBackgroundColor,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0)),
-                backgroundColor: Color(0xff33b256)),
-            onPressed: () {},
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Icon(Icons.search_outlined,color: Colors.black54,),
-                    SizedBox(
-                      width: 8.0,
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.search_outlined,
+                          color: Colors.black54,
+                          size: 28,
+                        ),
+                        SizedBox(
+                          width: 8.0,
+                        ),
+                        Text(
+                          "Search Events",
+                          style: GoogleFonts.poppins(
+                              textStyle: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.black54)),
+                        )
+                      ],
                     ),
-                    Text(
-                      "Search Events",
-                      style: googleLatoFontProvider(
-                          fontSize: 13, fontWeight: FontWeight.w600,color: Colors.black54),
-                    ),
+                    Icon(Icons.mic_outlined)
                   ],
                 ),
-                Icon(Icons.mic_outlined)
-              ],
-            ),
-          ),
+              ),
             ],
           )
         ],

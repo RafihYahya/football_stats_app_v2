@@ -25,19 +25,13 @@ class _MyAppBarState extends State<MyAppBar> {
       behavior: HitTestBehavior.opaque,
       onVerticalDragUpdate: (details) {
         setState(() {
-          height = (height + details.delta.dy) < 75
-              ? 75
-              : height + details.delta.dy;
+          height =
+              (height + details.delta.dy) < 75 ? 75 : height + details.delta.dy;
         });
       },
       onVerticalDragEnd: (details) {
         setState(() {
           details.primaryVelocity! < 0 ? height = 75 : height = 280;
-        });
-      },
-      onDoubleTap: () {
-        setState(() {
-          height = 200;
         });
       },
       child: ClipRRect(
@@ -47,7 +41,8 @@ class _MyAppBarState extends State<MyAppBar> {
         child: AnimatedContainer(
           duration: Duration(milliseconds: 200),
           padding: EdgeInsets.all(20.0),
-          color: Color(0xFF009f3f),
+          color: AppColors.primaryColor, //Color(0xFF009f3f),
+          curve: Curves.easeOut,
           height: height,
           child: Visibility(
               visible: height < 250 ? false : true,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:football_stats_tracker/LAYOUT/COMPONENTS/AppBar/appbar.dart';
+import 'package:football_stats_tracker/LAYOUT/COMPONENTS/NavBar/navbar.dart';
 import 'package:football_stats_tracker/LAYOUT/COMPONENTS/Scaffold/scaffold.dart';
 import 'package:football_stats_tracker/LAYOUT/VIEWS/Home/home_view.dart';
 import 'package:football_stats_tracker/ROUTES/route_paths.dart';
@@ -11,7 +12,7 @@ final GoRouter router = GoRouter(
     routes: [
       ShellRoute(
           builder: (context, state, child) {
-            return MyCustomScaffold(appBar: MyAppBar(), child: child);
+            return MyCustomScaffold(appBar: MyAppBar(), child: child,navBar: MyCustomNavBar(),);
           },
           routes: [
             GoRoute(

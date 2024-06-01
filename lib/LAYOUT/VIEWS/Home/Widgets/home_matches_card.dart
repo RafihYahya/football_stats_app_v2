@@ -9,8 +9,8 @@ class HomeMatchCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 8.0),
-      height: 170,
+      margin: EdgeInsets.symmetric(vertical: 10.0),
+      height: 150,
       decoration: BoxDecoration(
           color: Color(0xFF253546), borderRadius: BorderRadius.circular(12.0)),
       child: Stack(

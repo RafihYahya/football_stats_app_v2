@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:football_stats_tracker/CONSTANTS/sizes.dart';
 import 'package:football_stats_tracker/CONSTANTS/theme.dart';
 import 'package:football_stats_tracker/LAYOUT/COMPONENTS/AppBar/Widgets/appbar_details.dart';
 import 'package:football_stats_tracker/UTILS/google_fonts_utils.dart';
@@ -17,7 +18,7 @@ class MyAppBar extends StatefulWidget {
 }
 
 class _MyAppBarState extends State<MyAppBar> {
-  var height = 250.0;
+  var height = AppSizes.maxScaffoldSize;
 
   @override
   Widget build(BuildContext context) {
@@ -25,13 +26,16 @@ class _MyAppBarState extends State<MyAppBar> {
       behavior: HitTestBehavior.opaque,
       onVerticalDragUpdate: (details) {
         setState(() {
-          height =
-              (height + details.delta.dy) < 75 ? 75 : height + details.delta.dy;
+          height = (height + details.delta.dy) < AppSizes.minScaffoldSize
+              ? AppSizes.minScaffoldSize
+              : height + details.delta.dy;
         });
       },
       onVerticalDragEnd: (details) {
         setState(() {
-          details.primaryVelocity! < 0 ? height = 75 : height = 280;
+          details.primaryVelocity! < 0
+              ? height = AppSizes.minScaffoldSize
+              : height = AppSizes.maxScaffoldSize;
         });
       },
       child: ClipRRect(
@@ -45,7 +49,7 @@ class _MyAppBarState extends State<MyAppBar> {
           curve: Curves.easeOut,
           height: height,
           child: Visibility(
-              visible: height < 250 ? false : true,
+              visible: height < AppSizes.maxScaffoldSize - 5 ? false : true,
               child: SafeArea(child: AppBarDetails())),
         ),
       ),

@@ -13,13 +13,14 @@ class AppBarDetails extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 18.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Icon(
             Icons.menu_outlined,
             color: Colors.black87,
             size: 24,
           ),
+          SizedBox(height: 32,),
           Column(
             children: [
               Row(
@@ -52,7 +53,7 @@ class AppBarDetails extends StatelessWidget {
                         foregroundColor: AppColors.onBackgroundColor,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0)),
-                        backgroundColor: Color(0xff33b256)),
+                        backgroundColor: AppColors.appBarSearchEventsColor),
                     onPressed: () {},
                     child: Row(
                       children: [
@@ -87,7 +88,7 @@ class AppBarDetails extends StatelessWidget {
                     foregroundColor: AppColors.onBackgroundColor,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8.0)),
-                    backgroundColor: Color(0xff33b256)),
+                    backgroundColor: AppColors.appBarSearchEventsColor),
                 onPressed: () {},
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -23,14 +23,14 @@ class HomeTagsList extends StatelessWidget {
                       textStyle: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
-                          color: i == 0 ? Colors.green : Colors.white)),
+                          color: i == 0 ? Colors.redAccent : Colors.white)),
                 ),
                 Visibility(
                   visible: i == 0 ? true : false,
                   child: Container(
                     height: 2,
                     width: tags[i].length.toDouble() * 10,
-                    color: Colors.green,
+                    color: Colors.blueAccent,
                   ),
                 ),
               ],

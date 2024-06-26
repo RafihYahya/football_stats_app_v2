@@ -18,7 +18,7 @@ class MyAppBar extends StatefulWidget {
 }
 
 class _MyAppBarState extends State<MyAppBar> {
-  var height = AppSizes.maxScaffoldSize;
+  var height = AppSizes.minScaffoldSize;
 
   @override
   Widget build(BuildContext context) {
@@ -26,16 +26,16 @@ class _MyAppBarState extends State<MyAppBar> {
       behavior: HitTestBehavior.opaque,
       onVerticalDragUpdate: (details) {
         setState(() {
-          height = (height + details.delta.dy) < AppSizes.minScaffoldSize
-              ? AppSizes.minScaffoldSize
-              : height + details.delta.dy;
+          height = (height + details.delta.dy) > AppSizes.minScaffoldSize
+              ? height + details.delta.dy
+              : AppSizes.minScaffoldSize;
         });
       },
       onVerticalDragEnd: (details) {
         setState(() {
-          details.primaryVelocity! < 0
-              ? height = AppSizes.minScaffoldSize
-              : height = AppSizes.maxScaffoldSize;
+          details.primaryVelocity! > 0
+              ? height = AppSizes.maxScaffoldSize
+              : height = AppSizes.minScaffoldSize;
         });
       },
       child: ClipRRect(
@@ -49,7 +49,10 @@ class _MyAppBarState extends State<MyAppBar> {
           curve: Curves.easeOut,
           height: height,
           child: Visibility(
-              visible: height < AppSizes.maxScaffoldSize - 5 ? false : true,
+              visible: height <
+                      AppSizes.maxScaffoldSize - AppSizes.scaffoldSizeOffset
+                  ? false
+                  : true,
               child: SafeArea(child: AppBarDetails())),
         ),
       ),
